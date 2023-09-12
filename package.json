@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "keywords": [],
   "dependencies": {
+    "@types/styled-components": "^5.1.27",
     "loader-utils": "^3.2.1",
     "nanoid": "^4.0.2",
     "normalize.css": "^8.0.0",
@@ -41,7 +42,6 @@
     "postcss": "^8.4.16",
     "postcss-loader": "^7.0.1",
     "prettier": "^3.0.3",
-    "react-dev-utils": "^12.0.1",
     "react-scripts": "^5.0.1",
     "svg-url-loader": "^8.0.0",
     "ts-loader": "^9.4.4",
@@ -58,7 +58,7 @@
     "watch": "webpack --watch",
     "start": "webpack serve --open"
   },
-  "license": "ISC",
+  "license": "MIT",
   "browserslist": [
     ">0.2%",
     "not dead",

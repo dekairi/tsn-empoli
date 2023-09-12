@@ -1,19 +1,15 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
-const fs = require("fs");
 
 const isProduction = process.env.NODE_ENV == "production";
-const appDirectory = fs.realpathSync(process.cwd());
-const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 
 const stylesHandler = isProduction
     ? MiniCssExtractPlugin.loader
     : "style-loader";
 
 const config = {
-    entry: "./src/index.js",
+    entry: "./src/index.tsx",
     output: {
         filename: "bundle.js",
         path: path.resolve(__dirname, "dist"),
@@ -30,7 +26,6 @@ const config = {
             template: "index.html",
             favicon: './src/assets/logo.ico'
         }),
-        new ModuleScopePlugin(resolveApp('src'), [resolveApp('package.json')])
     ],
     resolve: {
         modules: ['src', 'node_modules'],
