@@ -3,7 +3,6 @@ import {Section, P, Img} from "../../styled";
 
 
 export const StyledSection = styled(Section)`
-  padding-left: ${(props) => props.theme.pagePadding};
   width: ${(props) => props.theme.desktopPageWidth};
   margin: 0 auto;
   padding-top: 100px;
