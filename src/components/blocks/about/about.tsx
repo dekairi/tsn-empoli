@@ -1,6 +1,6 @@
 import React, {FC} from "react";
-import { StyledSection, ContentWrapper, Text, StyledWrapper, Image } from "./styles";
-import Title, { TitleSize } from "../../ui/title/title";
+import {ContentWrapper, Image, StyledSection, StyledWrapper, Text} from "./styles";
+import Title, {TitleSize} from "../../ui/title/title";
 import SrcAbout from "../../../assets/about.jpg";
 
 const About: FC = () => {

@@ -1,6 +1,6 @@
-import React, { FC } from "react";
-import { Outlet } from "react-router-dom";
-import { Main } from "./styles";
+import React, {FC} from "react";
+import {Outlet} from "react-router-dom";
+import {Main} from "./styles";
 import Header from "../header/header";
 import Footer from "../footer/footer";
 

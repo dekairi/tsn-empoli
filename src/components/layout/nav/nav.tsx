@@ -1,10 +1,10 @@
 import React, {FC} from "react";
-import { NavList } from "./styles";
-import { useLocation } from "react-router-dom";
+import {NavList} from "./styles";
+import {useLocation} from "react-router-dom";
 import Button from "../../ui/button/button";
-import { nanoid } from "nanoid";
+import {nanoid} from "nanoid";
 import pages from "../../../data/pages";
-import { Li } from "../../styled";
+import {Li} from "../../styled";
 
 const Nav: FC = () => {
     const pageUrl = useLocation().pathname;

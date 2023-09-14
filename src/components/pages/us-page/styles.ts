@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Section, Ul, Li, P } from "../../styled";
+import {Li, P, Section, Ul} from "../../styled";
 
 export const StyledSection = styled(Section)`
   padding-left: ${(props) => props.theme.pagePadding};

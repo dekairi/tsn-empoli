@@ -1,8 +1,8 @@
-import { styled as styledMUI } from "@mui/material/styles";
+import {styled as styledMUI} from "@mui/material/styles";
 import styled from "styled-components";
 import TableCell, {tableCellClasses} from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
-import { Section } from "../../styled";
+import {Section} from "../../styled";
 
 export const StyledTableCell = styledMUI(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {

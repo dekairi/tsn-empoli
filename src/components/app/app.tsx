@@ -1,9 +1,8 @@
-import { GlobalStyle } from "./styles";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { FC } from "react";
-import React from "react";
+import {GlobalStyle} from "./styles";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import React, {FC} from "react";
 import ScrollTop from "../ui/scroll-top/scroll-top";
-import { AppRoute } from "../../const";
+import {AppRoute} from "../../const";
 import MainPage from "../pages/main-page/main-page";
 import PageWrapper from "../layout/page-wrapper/page-wrapper";
 import UsPage from "../pages/us-page/us-page";

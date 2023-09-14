@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Section } from "../../styled";
+import {Section} from "../../styled";
 
 export const StyledWrapper = styled.div`
   width: ${(props) => props.theme.desktopPageWidth};

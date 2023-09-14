@@ -1,19 +1,18 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const isProduction = process.env.NODE_ENV == "production";
-
-const stylesHandler = isProduction
-    ? MiniCssExtractPlugin.loader
-    : "style-loader";
 
 const config = {
     entry: "./src/index.tsx",
     output: {
         filename: "bundle.js",
         path: path.resolve(__dirname, "dist"),
-        publicPath: '/'
+        publicPath: '/',
+        clean: {
+            dry: false,
+            keep: /\assets/,
+        }
     },
     devServer: {
         static: path.join(__dirname, "dist"),
@@ -34,16 +33,11 @@ const config = {
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/i,
-                loader: "babel-loader",
-            },
-            {
-                test: /\.css$/i,
-                use: [stylesHandler, "css-loader", "postcss-loader"],
-            },
-            {
                 test: /\.(eot|ttf|woff|woff2|png|jpg|gif)$/i,
-                type: "asset",
+                type: "asset/resource",
+                generator: {
+                    filename: 'assets/[name][ext]',
+                }
             },
             {
                 test: /\.svg$/i,
@@ -51,8 +45,8 @@ const config = {
                 use: ['@svgr/webpack', 'url-loader']
             },
             {
-                test: /\.(ts|tsx)$/i,
-                use: 'ts-loader',
+                test: /\.(js|jsx|ts|tsx)$/i,
+                use: ["babel-loader"],
                 exclude: /node_modules/,
             }
         ],
@@ -62,8 +56,6 @@ const config = {
 module.exports = () => {
     if (isProduction) {
         config.mode = "production";
-
-        config.plugins.push(new MiniCssExtractPlugin());
     } else {
         config.mode = "development";
     }

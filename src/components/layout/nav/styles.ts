@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Ul } from "../../styled";
+import {Ul} from "../../styled";
 
 export const NavList = styled(Ul)`
   display: flex;

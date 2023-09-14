@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {Section, P, Img} from "../../styled";
+import {Img, P, Section} from "../../styled";
 
 
 export const StyledSection = styled(Section)`

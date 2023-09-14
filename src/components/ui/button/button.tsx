@@ -1,5 +1,5 @@
 import React, {FC, MouseEventHandler} from "react";
-import { StyledButton } from "./styles";
+import {StyledButton} from "./styles";
 
 interface ButtonProps {
     link?: string;

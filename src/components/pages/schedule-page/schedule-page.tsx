@@ -1,12 +1,12 @@
-import React, { FC } from "react";
+import React, {FC} from "react";
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { StyledTableCell, StyledTableRow, StyledSection } from "./styles";
-import Title, { TitleSize } from "../../ui/title/title";
+import {StyledSection, StyledTableCell, StyledTableRow} from "./styles";
+import Title, {TitleSize} from "../../ui/title/title";
 
 function createData(
     day: string,

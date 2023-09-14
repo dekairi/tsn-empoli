@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, {FC} from "react";
 import About from "../../blocks/about/about";
 
 const MainPage: FC = () => {

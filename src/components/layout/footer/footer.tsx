@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledSection, Copyright, StyledWrapper } from "./styles";
+import {Copyright, StyledSection, StyledWrapper} from "./styles";
 import Logo from "../../ui/logo/logo";
 
 function Footer() {

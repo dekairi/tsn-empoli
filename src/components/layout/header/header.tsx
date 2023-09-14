@@ -1,5 +1,5 @@
 import React, {FC} from "react";
-import { StyledSection, StyledWrapper } from "./styles";
+import {StyledSection, StyledWrapper} from "./styles";
 import Logo from "../../ui/logo/logo";
 import Nav from "../nav/nav";
 

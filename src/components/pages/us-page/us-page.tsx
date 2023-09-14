@@ -1,9 +1,9 @@
-import React, { FC } from "react";
-import Title, { TitleSize } from "../../ui/title/title";
-import { StyledList, StyledSection, StyledItem, Name, Dates, Italic, DateRow } from "./styles";
+import React, {FC} from "react";
+import Title, {TitleSize} from "../../ui/title/title";
+import {DateRow, Dates, Italic, Name, StyledItem, StyledList, StyledSection} from "./styles";
 import {nanoid} from "nanoid";
 import management from "../../../data/management";
-import { P } from "../../styled";
+import {P} from "../../styled";
 
 const UsPage: FC = () => {
     return (
