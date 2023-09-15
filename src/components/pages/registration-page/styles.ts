@@ -1,5 +1,12 @@
 import styled from "styled-components";
-import {P} from "../../styled";
+import {P, Section} from "../../styled";
+
+export const StyledSection = styled(Section)`
+  width: ${(props) => props.theme.desktopPageWidth};
+  margin: 0 auto;
+  padding-top: 100px;
+  padding-bottom: 145px;
+`;
 
 export const MainTitle = styled(P)`
   font-size: 24px;

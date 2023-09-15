@@ -3,7 +3,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import registration from "../../../data/registration";
-import {MainTitle, MiniTitle, MainText} from "./styles";
+import {MainTitle, MiniTitle, MainText, StyledSection} from "./styles";
 import {nanoid} from "nanoid";
 
 interface TabPanelProps {
@@ -47,31 +47,33 @@ const RegistrationPage: FC = () => {
     };
 
     return (
-        <Box sx={{ width: '100%' }}>
-            <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-                    {registration.map((tab) => (
-                        <Tab key={nanoid()} label={tab.title} {...a11yProps(tab.index)} />
-                    ))}
-                </Tabs>
-            </Box>
-            {registration.map((tab) => (
-                <CustomTabPanel key={nanoid()} value={value} index={tab.index}>
-                    <MainTitle>{tab.text.title}</MainTitle>
-                    <MiniTitle>{tab.text.note1}</MiniTitle>
-                    {tab.text.mainText.map((paragraph) => (
-                        <MainText key={nanoid()}>{paragraph}</MainText>
-                    ))}
-                    <MiniTitle>Documenti:</MiniTitle>
-                    <ol>
-                        {tab.text.documenti.map((documento) => (
-                            <li key={nanoid()}>{documento}</li>
+        <StyledSection>
+            <Box sx={{ width: '100%' }}>
+                <Box sx={{ borderBottom: 1, borderColor: 'divider', flexWrap: 'wrap' }}>
+                    <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+                        {registration.map((tab) => (
+                            <Tab key={nanoid()} label={tab.title} {...a11yProps(tab.index)} />
                         ))}
-                    </ol>
-                    <MainText>{tab.text.note2}</MainText>
-                </CustomTabPanel>
-            ))}
-        </Box>
+                    </Tabs>
+                </Box>
+                {registration.map((tab) => (
+                    <CustomTabPanel key={nanoid()} value={value} index={tab.index}>
+                        <MainTitle>{tab.text.title}</MainTitle>
+                        <MiniTitle>{tab.text.note1}</MiniTitle>
+                        {tab.text.mainText.map((paragraph) => (
+                            <MainText key={nanoid()}>{paragraph}</MainText>
+                        ))}
+                        <MiniTitle>Documenti:</MiniTitle>
+                        <ol>
+                            {tab.text.documenti.map((documento) => (
+                                <li key={nanoid()}>{documento}</li>
+                            ))}
+                        </ol>
+                        <MainText>{tab.text.note2}</MainText>
+                    </CustomTabPanel>
+                ))}
+            </Box>
+        </StyledSection>
     );
 }
 
