@@ -9,10 +9,6 @@ const config = {
         filename: "bundle.js",
         path: path.resolve(__dirname, "dist"),
         publicPath: '/',
-        clean: {
-            dry: false,
-            keep: /\assets/,
-        }
     },
     devServer: {
         static: path.join(__dirname, "dist"),

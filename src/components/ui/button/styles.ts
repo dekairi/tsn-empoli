@@ -34,7 +34,12 @@ export const StyledButton = styled(Link)<LinkProps>`
     box-shadow: none;
   }
 
-  &:disabled {
-    filter: grayscale();
+  &[disabled] {
+    color: #333;
+    cursor: default;
+    &:hover,
+    &:active {
+      box-shadow: none;
+    }
   }
 `;

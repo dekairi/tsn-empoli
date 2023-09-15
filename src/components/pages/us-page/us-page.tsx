@@ -4,6 +4,7 @@ import {DateRow, Dates, Italic, Name, StyledItem, StyledList, StyledSection} fro
 import {nanoid} from "nanoid";
 import management from "../../../data/management";
 import {P} from "../../styled";
+import stuff from "../../../data/stuff";
 
 const UsPage: FC = () => {
     return (
@@ -13,6 +14,22 @@ const UsPage: FC = () => {
             </Title>
             <StyledList $isGridList>
                 {management.map((person) => (
+                    <StyledItem key={nanoid()}>
+                        <Title size={TitleSize.SMALL} as="h3">{person.role}</Title>
+                        <Name>{person.name}</Name>
+                        <Dates>
+                            <DateRow><Italic>Elezione:</Italic><P>{person.election}</P></DateRow>
+                            <DateRow><Italic>Convalida:</Italic><P>{person.validate}</P></DateRow>
+                            <DateRow><Italic>Scadenza:</Italic><P>{person.expire}</P></DateRow>
+                        </Dates>
+                    </StyledItem>
+                ))}
+            </StyledList>
+            <Title size={TitleSize.BIG} as="h2">
+                Lo staff:
+            </Title>
+            <StyledList $isGridList>
+                {stuff.map((person) => (
                     <StyledItem key={nanoid()}>
                         <Title size={TitleSize.SMALL} as="h3">{person.role}</Title>
                         <Name>{person.name}</Name>

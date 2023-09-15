@@ -1,5 +1,7 @@
-import styled from "styled-components";
-import {Li, P, Section, Ul} from "../../styled";
+import styled from 'styled-components';
+import {
+  Li, P, Section, Ul,
+} from '../../styled';
 
 export const StyledSection = styled(Section)`
   padding-left: ${(props) => props.theme.pagePadding};
@@ -9,6 +11,7 @@ export const StyledSection = styled(Section)`
   padding-bottom: 145px;
   flex-direction: column;
   align-items: center;
+  gap: 30px;
   
   h2 {
     margin-bottom: 30px;

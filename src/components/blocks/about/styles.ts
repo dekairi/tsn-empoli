@@ -1,6 +1,5 @@
-import styled from "styled-components";
-import {Img, P, Section} from "../../styled";
-
+import styled from 'styled-components';
+import { Img, P, Section } from '../../styled';
 
 export const StyledSection = styled(Section)`
   width: ${(props) => props.theme.desktopPageWidth};
