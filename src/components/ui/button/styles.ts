@@ -11,7 +11,7 @@ export const StyledButton = styled(Link)<LinkProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 60px;
+  min-height: 40px;
   font-size: ${(props) => props.theme.fontSizeDefault};
   min-width: 260px;
   max-width: 700px;
@@ -35,11 +35,7 @@ export const StyledButton = styled(Link)<LinkProps>`
   }
 
   &[disabled] {
-    color: #333;
     cursor: default;
-    &:hover,
-    &:active {
-      box-shadow: none;
-    }
+    box-shadow: 0 4px 0 0 rgba(255, 255, 255, 0.5);
   }
 `;
