@@ -1,42 +1,5 @@
 import styled from 'styled-components';
-import {
-  Li, P, Section, Ul,
-} from '../../styled';
-
-export const StyledSection = styled(Section)`
-  width: ${(props) => props.theme.desktopPageWidth};
-  margin: 0 auto;
-  padding-top: 100px;
-  padding-bottom: 145px;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  
-  h2 {
-    margin-bottom: 30px;
-  }
-
-  h3 {
-    margin-bottom: 20px;
-    color: ${(props) => props.theme.colorBlue};
-    text-transform: uppercase;
-  }
-`;
-
-export const StyledList = styled(Ul)`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-`;
-
-export const StyledItem = styled(Li)`
-  display: flex;
-  flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.04);
-  border: 1px solid #eee;
-  padding: ${(props) => props.theme.indent};
-  width: 260px;
-`;
+import {P} from '../../styled';
 
 export const Name = styled(P)`
   font-size: 20px;
