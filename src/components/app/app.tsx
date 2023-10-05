@@ -7,10 +7,10 @@ import MainPage from "../pages/main-page/main-page";
 import PageWrapper from "../layout/page-wrapper/page-wrapper";
 import UsPage from "../pages/us-page/us-page";
 import RegistrationPage from "../pages/registration-page/registration-page";
-import RegulationPage from "../pages/regulation-page/regulation-page";
 import InformationPage from "../pages/information-page/information-page";
 import SchedulePage from "../pages/schedule-page/schedule-page";
 import ContactsPage from "../pages/contacts-page/contacts-page";
+import ChampionsPage from "../pages/champions-page/champions-page";
 
 const App: FC = () => {
     return (
@@ -30,12 +30,8 @@ const App: FC = () => {
                             element={<RegistrationPage />}
                         />
                         <Route
-                            path={AppRoute.REGOLAMENTO.replace(AppRoute.MAIN, "")}
-                            element={<RegulationPage />}
-                        />
-                        <Route
                             path={AppRoute.CAMPIONI.replace(AppRoute.MAIN, "")}
-                            element={<RegulationPage />}
+                            element={<ChampionsPage />}
                         />
                         <Route
                             path={AppRoute.INFORMAZIONI.replace(AppRoute.MAIN, "")}

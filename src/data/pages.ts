@@ -14,10 +14,6 @@ const pages = [
     title: 'Iscrizione',
   },
   {
-    link: AppRoute.REGOLAMENTO,
-    title: 'Regolamento',
-  },
-  {
     link: AppRoute.CAMPIONI,
     title: 'I nostri campioni',
   },

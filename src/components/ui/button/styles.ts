@@ -13,8 +13,7 @@ export const StyledButton = styled(Link)<LinkProps>`
   align-items: center;
   min-height: 40px;
   font-size: ${(props) => props.theme.fontSizeDefault};
-  min-width: 260px;
-  max-width: 700px;
+  padding: 5px 15px;
   font-weight: 700;
   line-height: ${(props) => props.theme.lineHeightDefault};
   color: ${(props) => props.theme.colorWhite};

@@ -11,7 +11,7 @@ const About: FC = () => {
     return (
         <Container maxWidth="lg">
             <Box sx={{ flexGrow: 1 }} >
-                <Grid container spacing={5} disableEqualOverflow style={{paddingTop: "100px", paddingBottom: "145px"}}>
+                <Grid container spacing={5} disableEqualOverflow style={{paddingTop: "100px"}}>
                     <Grid xs={12}>
                         <Title size={TitleSize.BIG}>
                             Tiro a Segno Nazionale a Empoli

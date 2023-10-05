@@ -8,6 +8,7 @@ interface ButtonProps {
     className?: string;
     children?: string | JSX.Element | JSX.Element[];
     disabled?: boolean;
+    style?: {[key: string]: string}
 }
 
 const Button: FC<ButtonProps> = (props) => {
