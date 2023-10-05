@@ -8,7 +8,7 @@ const PageWrapper: FC = () => {
     return (
         <>
             <Header />
-                <Main>
+                <Main style={{minHeight: "100vh"}}>
                     <Outlet />
                 </Main>
             <Footer />

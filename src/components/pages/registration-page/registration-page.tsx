@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import registration from "../../../data/registration";
 import {MainTitle, MiniTitle, MainText, StyledSection} from "./styles";
 import {nanoid} from "nanoid";
+import {Container} from "@mui/material";
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -47,10 +48,16 @@ const RegistrationPage: FC = () => {
     };
 
     return (
-        <StyledSection>
+        <Container maxWidth="lg" style={{paddingTop: "50px"}}>
             <Box sx={{ width: '100%' }}>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider', flexWrap: 'wrap' }}>
-                    <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+                    <Tabs
+                        value={value}
+                        onChange={handleChange}
+                        aria-label="Iscrizioni"
+                        variant="scrollable"
+                        scrollButtons="auto"
+                    >
                         {registration.map((tab) => (
                             <Tab key={nanoid()} label={tab.title} {...a11yProps(tab.index)} />
                         ))}
@@ -73,7 +80,7 @@ const RegistrationPage: FC = () => {
                     </CustomTabPanel>
                 ))}
             </Box>
-        </StyledSection>
+        </Container>
     );
 }
 
