@@ -5,8 +5,9 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import {StyledSection, StyledTableCell, StyledTableRow} from "./styles";
-import Title, {TitleSize} from "../../ui/title/title";
+import {StyledTableCell, StyledTableRow} from "./styles";
+import {Box, Container, Typography} from "@mui/material";
+import Grid from "@mui/material/Unstable_Grid2";
 
 function createData(
     day: string,
@@ -25,33 +26,37 @@ const rows = [
 
 const SchedulePage: FC = () => {
     return (
-        <StyledSection>
-            <Title size={TitleSize.BIG}>
-                Il poligono osserva i seguenti orari:
-            </Title>
-            <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 700 }} aria-label="customized table">
-                    <TableHead>
-                        <TableRow>
-                            <StyledTableCell></StyledTableCell>
-                            <StyledTableCell align="right">Estivo ora legale</StyledTableCell>
-                            <StyledTableCell align="right">Invernale ora solare</StyledTableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {rows.map((row) => (
-                            <StyledTableRow key={row.day}>
-                                <StyledTableCell component="th" scope="row">
-                                    {row.day}
-                                </StyledTableCell>
-                                <StyledTableCell align="right">{row.summerTime}</StyledTableCell>
-                                <StyledTableCell align="right">{row.winterTime}</StyledTableCell>
-                            </StyledTableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>
-        </StyledSection>
+        <Container maxWidth="lg" style={{paddingTop: "50px"}}>
+            <Box sx={{ width: '100%' }}>
+                <Grid xs={12}>
+                    <Typography variant="h1" align="center" gutterBottom sx={{fontSize: "44px", fontWeight: "bold"}}>
+                        Il poligono osserva i seguenti orari:
+                    </Typography>
+                </Grid>
+                <TableContainer component={Paper}>
+                    <Table aria-label="customized table">
+                        <TableHead>
+                            <TableRow>
+                                <StyledTableCell></StyledTableCell>
+                                <StyledTableCell align="right" sx={{minWidth: "90px"}}>Estivo ora legale</StyledTableCell>
+                                <StyledTableCell align="right" sx={{minWidth: "90px"}}>Invernale ora solare</StyledTableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {rows.map((row) => (
+                                <StyledTableRow key={row.day}>
+                                    <StyledTableCell component="th" scope="row">
+                                        {row.day}
+                                    </StyledTableCell>
+                                    <StyledTableCell align="right">{row.summerTime}</StyledTableCell>
+                                    <StyledTableCell align="right">{row.winterTime}</StyledTableCell>
+                                </StyledTableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            </Box>
+        </Container>
     );
 }
 
