@@ -28,11 +28,31 @@ interface ChampionsProps {
 
 const ChampionCard: FC<ChampionsProps> = ({champion}) => {
     return (
-        <Grid container spacing={2}>
-            <Grid xs={12} sm={4}>
-                <Img src={champion.image} alt="Immagine del campione" />
+        <Grid container>
+            <Grid
+                xs={12}
+                sm={4}
+                style={{
+                    height: "300px",
+                    overflow: "hidden",
+                    position: "relative",
+                    paddingRight: "20px"
+                }}
+            >
+                <Img
+                    src={champion.image}
+                    alt="Immagine del campione"
+                    style={{
+                        position: "absolute",
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                        height: "100%",
+                        width: "auto"
+                    }}
+                />
             </Grid>
-            <Grid xs={12} sm={8} sx={{maxHeight: "200px", overflow: "hidden scroll"}}>
+            <Grid xs={12} sm={8} sx={{height: "300px", overflow: "hidden scroll", paddingLeft: {xs: '0', sm: '20px'}, paddingTop: {xs: '20px', sm: '0'}}}>
                 <Typography variant="h4">{champion.name}</Typography>
                 {champion.medals.map((medal) => (
                     <>

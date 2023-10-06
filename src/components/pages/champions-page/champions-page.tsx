@@ -23,7 +23,7 @@ const ChampionsPage: FC = () => {
                         key={nanoid()}
                         style={{backgroundColor: "rgba(0, 0, 0, 0.04)", marginBottom: "20px"}}
                     >
-                        <CardContent>
+                        <CardContent sx={{paddingBottom: "16px!important"}}>
                             <ChampionCard champion={champion}/>
                         </CardContent>
                     </Card>
