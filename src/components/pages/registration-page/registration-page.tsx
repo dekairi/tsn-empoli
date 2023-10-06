@@ -3,7 +3,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import registration from "../../../data/registration";
-import {MainTitle, MiniTitle, MainText, StyledSection} from "./styles";
+import {MainTitle, MiniTitle, MainText} from "./styles";
 import {nanoid} from "nanoid";
 import {Container} from "@mui/material";
 
