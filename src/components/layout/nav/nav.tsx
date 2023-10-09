@@ -46,6 +46,7 @@ const Nav: FC = () => {
                     }}
                     open={Boolean(anchorElNav)}
                     onClose={handleCloseNavMenu}
+                    onClick={handleCloseNavMenu}
                     sx={{
                         display: { xs: 'block', lg: 'none' },
                     }}
