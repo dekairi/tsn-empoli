@@ -1,12 +1,9 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV == "production";
-
-const stylesHandler = isProduction
-    ? MiniCssExtractPlugin.loader
-    : "style-loader";
 
 const config = {
     entry: "./src/index.tsx",
@@ -26,6 +23,11 @@ const config = {
             template: "index.html",
             favicon: './src/assets/logo.ico'
         }),
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: path.resolve(__dirname, "dist") }
+            ]
+        })
     ],
     resolve: {
         modules: ['src', 'node_modules'],
@@ -35,7 +37,10 @@ const config = {
         rules: [
             {
                 test: /\.(eot|ttf|woff|woff2|png|jpg|gif)$/i,
-                type: "asset",
+                type: 'asset',
+                generator: {
+                    filename: 'assets/[name][ext]'
+                }
             },
             {
                 test: /\.svg$/i,
@@ -46,6 +51,13 @@ const config = {
                 test: /\.(js|jsx|ts|tsx)$/i,
                 use: ["babel-loader"],
                 exclude: /node_modules/,
+            },
+            {
+                test: /\.pdf$/i,
+                use: ["file-loader"],
+                generator: {
+                    filename: 'assets/[name][ext]'
+                }
             },
             {
                 test: /\.s[ac]ss$/i,

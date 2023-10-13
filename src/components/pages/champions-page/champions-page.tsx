@@ -1,6 +1,5 @@
 import React, {FC} from "react";
 import {Container, Typography} from "@mui/material";
-import Title, {TitleSize} from "../../ui/title/title";
 import Grid from "@mui/material/Unstable_Grid2";
 import Card from "@mui/material/Card";
 import {nanoid} from "nanoid";
