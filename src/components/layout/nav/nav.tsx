@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
+import {nanoid} from "nanoid";
 
 const Nav: FC = () => {
     const pageUrl = useLocation().pathname;
@@ -52,7 +53,7 @@ const Nav: FC = () => {
                     }}
                 >
                     {pages.map((page) => (
-                        <Button link={page.link} disabled={pageUrl === page.link} style={{color: "#1976d2"}}>
+                        <Button key={nanoid()} link={page.link} disabled={pageUrl === page.link} style={{color: "#1976d2"}}>
                             {page.title}
                         </Button>
                     ))}
@@ -60,7 +61,7 @@ const Nav: FC = () => {
             </Box>
             <Box sx={{ flexGrow: 0, display: { xs: 'none', lg: 'flex' } }}>
                 {pages.map((page) => (
-                    <Button link={page.link} disabled={pageUrl === page.link}>
+                    <Button key={nanoid()} link={page.link} disabled={pageUrl === page.link}>
                         {page.title}
                     </Button>
                 ))}
