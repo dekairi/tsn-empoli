@@ -35,6 +35,7 @@ const Regulations: FC = () => {
             <Document
                 file={PdfRegolamento}
                 onLoadSuccess={onDocumentLoadSuccess}
+                renderMode="svg"
             >
                 <Page
                     pageNumber={pageNumber}
