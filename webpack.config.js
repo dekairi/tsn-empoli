@@ -1,6 +1,5 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV == "production";
@@ -25,7 +24,7 @@ const config = {
         }),
         new CopyWebpackPlugin({
             patterns: [
-                { from: path.resolve(__dirname, "dist") }
+                { from: "./src/assets" }
             ]
         })
     ],
@@ -36,11 +35,8 @@ const config = {
     module: {
         rules: [
             {
-                test: /\.(eot|ttf|woff|woff2|png|jpg|gif)$/i,
-                type: 'asset',
-                generator: {
-                    filename: 'assets/[name][ext]'
-                }
+                test: /\.(eot|ttf|woff|woff2)$/i,
+                type: 'asset'
             },
             {
                 test: /\.svg$/i,
@@ -51,13 +47,6 @@ const config = {
                 test: /\.(js|jsx|ts|tsx)$/i,
                 use: ["babel-loader"],
                 exclude: /node_modules/,
-            },
-            {
-                test: /\.pdf$/i,
-                use: ["file-loader"],
-                generator: {
-                    filename: 'assets/[name][ext]'
-                }
             },
             {
                 test: /\.s[ac]ss$/i,
@@ -77,7 +66,6 @@ const config = {
 module.exports = () => {
     if (isProduction) {
         config.mode = "production";
-        config.plugins.push(new MiniCssExtractPlugin());
     } else {
         config.mode = "development";
     }
