@@ -1,6 +1,5 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV == "production";
 
@@ -21,11 +20,6 @@ const config = {
         new HtmlWebpackPlugin({
             template: "index.html",
             favicon: './src/assets/logo.ico'
-        }),
-        new CopyWebpackPlugin({
-            patterns: [
-                { from: "./src/assets" }
-            ]
         })
     ],
     resolve: {
@@ -35,8 +29,11 @@ const config = {
     module: {
         rules: [
             {
-                test: /\.(eot|ttf|woff|woff2)$/i,
-                type: 'asset'
+                test: /\.(eot|ttf|woff|woff2|png|jpg|gif)$/i,
+                type: 'asset',
+                generator: {
+                    filename: 'assets/[name][ext]'
+                }
             },
             {
                 test: /\.svg$/i,
@@ -47,6 +44,13 @@ const config = {
                 test: /\.(js|jsx|ts|tsx)$/i,
                 use: ["babel-loader"],
                 exclude: /node_modules/,
+            },
+            {
+                test: /\.pdf$/i,
+                use: ["file-loader"],
+                generator: {
+                    filename: 'assets/[name][ext]'
+                }
             },
             {
                 test: /\.s[ac]ss$/i,
