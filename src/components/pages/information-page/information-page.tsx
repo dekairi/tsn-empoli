@@ -23,7 +23,7 @@ const infoTabs = [
     },
     {
         index: 1,
-        title: "Le nostre arme",
+        title: "Le nostre armi",
         body: <Img src={SrcArme} alt="Arme del poligono" />,
     },
     {
